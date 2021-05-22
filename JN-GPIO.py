@@ -1,7 +1,11 @@
+# A DC motor is connected to L298 driver board
+# Jetson Nano is used to drive the L298 directly using GPIO pins
+# common ground must be connected
+
 import RPi.GPIO as GPIO
 import time
 
-# Motor-A on ENA
+# Motor-A on ENA, IN1, IN2
 ENA = 33
 IN1 = 35
 IN2 = 37
@@ -9,7 +13,7 @@ IN2 = 37
 # set pin numbers to the board
 GPIO.setmode(GPIO.BOARD)
 
-# initialize EnA, In1 and In2
+# initialize ENA, IN1 and IN2
 GPIO.setup(ENA, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN1, GPIO.OUT, initial=GPIO.LOW)
 GPIO.setup(IN2, GPIO.OUT, initial=GPIO.LOW)
